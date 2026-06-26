@@ -16,7 +16,9 @@ describe('cn', () => {
   });
 
   it('ignora los valores falsy (undefined, false, 0)', () => {
-    expect(cn('btn', undefined as unknown as string, false as unknown as string, 'active')).toBe('btn active');
+    expect(cn('btn', undefined as unknown as string, false as unknown as string, 'active')).toBe(
+      'btn active'
+    );
   });
 
   it('funciona correctamente con una sola clase', () => {
