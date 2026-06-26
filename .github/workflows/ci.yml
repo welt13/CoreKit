@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  quality:
+    name: Lint, Format y Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Verificar formato (Prettier)
+        run: npm run format:check
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      - name: Ejecutar tests
+        run: npm run test
