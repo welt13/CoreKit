@@ -1,4 +1,2 @@
 #!/bin/sh
-echo "args: $1 $2 $3 $4"
-echo "all: $@"
-npx --no commitlint --edit "$1"
+npx --no commitlint --edit "${1:-.git/COMMIT_EDITMSG}"
