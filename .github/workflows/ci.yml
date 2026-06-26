@@ -29,5 +29,14 @@ jobs:
       - name: Lint (ESLint)
         run: npm run lint
 
+      - name: Type check (TypeScript)
+        run: npm run typecheck
+
       - name: Ejecutar tests
         run: npm run test
+
+      - name: Build de librería
+        run: npm run build
+
+      - name: Build de Storybook
+        run: npm run build-storybook
