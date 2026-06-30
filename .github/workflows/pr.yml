@@ -32,7 +32,7 @@ jobs:
       - name: Type check (TypeScript)
         run: npm run typecheck
 
-      # TODO: cambiar a `npm run test:coverage` en Fase 3 cuando haya componentes con tests.
+      # TODO: habilitar reporte de cobertura cuando haya componentes con tests.
       - name: Ejecutar tests
         run: npm run test
 
