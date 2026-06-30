@@ -12,13 +12,11 @@ describe('cn', () => {
   });
 
   it('ignora las cadenas vacías o nulas', () => {
-    expect(cn('btn', '', 'active', null as unknown as string)).toBe('btn active');
+    expect(cn('btn', '', 'active', null)).toBe('btn active');
   });
 
   it('ignora los valores falsy (undefined, false, 0)', () => {
-    expect(cn('btn', undefined as unknown as string, false as unknown as string, 'active')).toBe(
-      'btn active'
-    );
+    expect(cn('btn', undefined, false, 'active')).toBe('btn active');
   });
 
   it('funciona correctamente con una sola clase', () => {
