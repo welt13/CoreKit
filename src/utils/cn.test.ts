@@ -3,23 +3,23 @@ import { describe, expect, it } from 'vitest';
 import { cn } from './cn';
 
 describe('cn', () => {
-  it('devuelve una cadena vacía cuando no recibe argumentos', () => {
+  it('should return an empty string when no arguments are provided', () => {
     expect(cn()).toBe('');
   });
 
-  it('concatena las clases recibidas separadas por espacio', () => {
+  it('should concatenate classes separated by space', () => {
     expect(cn('btn', 'primary')).toBe('btn primary');
   });
 
-  it('ignora las cadenas vacías o nulas', () => {
+  it('should ignore empty strings and null values', () => {
     expect(cn('btn', '', 'active', null)).toBe('btn active');
   });
 
-  it('ignora los valores falsy (undefined, false, 0)', () => {
+  it('should ignore falsy values (undefined, false, 0)', () => {
     expect(cn('btn', undefined, false, 'active')).toBe('btn active');
   });
 
-  it('funciona correctamente con una sola clase', () => {
+  it('should work correctly with a single class', () => {
     expect(cn('button')).toBe('button');
   });
 });
