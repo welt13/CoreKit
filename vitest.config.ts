@@ -10,14 +10,12 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
-      // Thresholds deshabilitados hasta Fase 3 (habrá componentes con tests).
-      // TODO: habilitar thresholds { lines: 90, functions: 90, branches: 90, statements: 90 }
-      // thresholds: {
-      //   lines: 90,
-      //   functions: 90,
-      //   branches: 90,
-      //   statements: 90,
-      // },
+      thresholds: {
+        lines: 90,
+        functions: 90,
+        branches: 90,
+        statements: 90,
+      },
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['src/**/*.test.{ts,tsx}', 'src/**/index.ts', 'src/**/*.props.ts'],
     },
